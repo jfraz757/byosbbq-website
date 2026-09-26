@@ -1,0 +1,199 @@
+:root {
+  --bg: #0b0b0b;
+  --surface: #161412;
+  --border: #2c2622;
+  --text: #f4efe9;
+  --muted: #b9afa5;
+  --yellow: #f7d547;
+  --orange: #f7931e;
+  --red: #e4202a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(247, 147, 30, 0.16), transparent 70%),
+    var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.6 "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1, h2 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+a { color: var(--yellow); }
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: min(360px, 82vw);
+  height: auto;
+  /* lets the logo's black square melt into the page glow */
+  mix-blend-mode: lighten;
+}
+
+.badge {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--orange);
+  border-radius: 999px;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  color: var(--yellow);
+}
+
+.lede {
+  max-width: 36rem;
+  color: var(--muted);
+  margin: 0.75rem 0 1.75rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn:focus-visible, .socials a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  color: #fff;
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover { background: var(--surface); }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 48rem) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.9rem;
+  color: var(--yellow);
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.follow {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.follow h2 { font-size: 2.4rem; }
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.socials a:hover { border-color: var(--orange); }
+
+.socials svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 2;
+}
+
+.socials svg .dot, .socials svg .fill {
+  fill: var(--orange);
+  stroke: none;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer p { margin: 0.25rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
