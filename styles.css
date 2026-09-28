@@ -23,6 +23,53 @@ body {
   min-height: 100vh;
 }
 
+.site-nav {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-nav .brand {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-nav nav a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav nav a:hover { color: var(--text); }
+
+.site-nav nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--orange);
+}
+
+.site-nav a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.logo-small { width: min(240px, 60vw); }
+
+.about-hero { padding-bottom: 2rem; }
+
 main {
   max-width: 64rem;
   margin: 0 auto;
