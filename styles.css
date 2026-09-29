@@ -230,6 +230,101 @@ a { color: var(--yellow); }
   stroke: none;
 }
 
+/* Links page (QR code target on the trailer wrap) */
+.links-page {
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.links-logo { width: min(220px, 60vw); }
+
+.links-page h1 {
+  font-size: clamp(2.2rem, 9vw, 3rem);
+  color: var(--yellow);
+}
+
+.links-sub {
+  color: var(--muted);
+  margin: 0.25rem 0 1.5rem;
+}
+
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 3.75rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.link-btn:hover { border-color: var(--orange); transform: translateY(-2px); }
+
+.link-btn:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.link-btn span { display: flex; flex-direction: column; line-height: 1.25; }
+
+.link-btn small {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.link-btn svg {
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 2;
+}
+
+.link-btn svg .dot, .link-btn svg .fill { fill: var(--orange); stroke: none; }
+
+.link-btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  border-color: transparent;
+  color: #fff;
+}
+
+.link-btn-primary small { color: rgba(255, 255, 255, 0.85); }
+.link-btn-primary svg { stroke: #fff; }
+
+.links-tag {
+  margin: 2rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: var(--orange);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-btn { transition: none; }
+  .link-btn:hover { transform: none; }
+}
+
 footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 1rem 2rem;
